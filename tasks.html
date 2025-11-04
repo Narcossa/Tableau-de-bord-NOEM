@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>NOEM • Tâches</title>
+<link rel="manifest" href="manifest.json"><link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <img src="assets/logo-noem.png" class="logo" alt="NOEM">
+  <strong>Tâches & Collaborateurs</strong>
+  <div class="sp"></div>
+  <div id="profileBadge" class="badge">—</div>
+  <nav class="nav">
+    <a href="index.html" class="">Accueil</a>
+    <a href="tasks.html" class="active">Tâches</a>
+    <a href="expenses.html" class="">Dépenses</a>
+    <a href="notes.html" class="">Notes</a>
+    <a href="settings.html" class="">⚙️</a>
+  </nav>
+</header>
+<nav class="bottomnav"><a href="index.html">🏠</a><a href="tasks.html">🧱</a><a href="expenses.html">💶</a><a href="notes.html">🗒️</a><a href="settings.html">⚙️</a></nav>
+<div class="modal" id="profileModal"><div class="box"><header><img src="assets/logo-noem.png" style="height:28px"><strong>Choisissez votre profil</strong></header><div class="body"><button class="btn primary" onclick="NOEM.setProfile('Bastien')">👷 Bastien GOSSELIN</button><button class="btn" onclick="NOEM.setProfile('Mathis')">💻 Mathis GOSSELIN</button><span class="small">Le profil est mémorisé localement.</span></div></div></div>
+
+<main class="container">
+  <div class="card"><div class="card-h">Nouvelle tâche</div>
+    <div class="card-b grid">
+      <input id="tTitle" placeholder="Titre">
+      <div class="row"><input id="tClient" placeholder="Client"><input id="tCollab" placeholder="Collaborateur"></div>
+      <div class="row"><select id="tStatus"><option>À faire</option><option>En cours</option><option>Fait</option></select><select id="tPriority"><option>Normal</option><option>Haute</option><option>Basse</option></select></div>
+      <div class="row"><input id="tStart" type="date"><input id="tEnd" type="date"><input id="tHours" type="number" step="0.5" placeholder="Heures"></div>
+      <input id="tTags" placeholder="Tags (virgule)">
+      <button class="btn primary" onclick="TASKS.add()">+ Ajouter</button>
+    </div>
+  </div>
+
+  <div class="card"><div class="card-h">Filtres</div>
+    <div class="card-b row">
+      <input id="fQ" placeholder="Rechercher">
+      <select id="fSt"><option value="">Tous statuts</option><option>À faire</option><option>En cours</option><option>Fait</option></select>
+      <select id="fCl"><option value="">Tous clients</option></select>
+      <select id="fCo"><option value="">Tous collaborateurs</option></select>
+      <input id="fFrom" type="date"><input id="fTo" type="date">
+      <button class="btn" onclick="TASKS.clear()">Effacer</button>
+    </div>
+  </div>
+
+  <div class="card"><div class="card-h">Liste</div>
+    <div class="card-b"><table class="table"><thead><tr><th>Titre</th><th>Client</th><th>Collab</th><th>Statut</th><th>Début</th><th>Fin</th><th>Heures</th><th>Tags</th><th>Actions</th></tr></thead><tbody id="tbTasks"></tbody></table></div>
+  </div>
+</main>
+<footer class="footer">NOEM • Dashboard — stockage IndexedDB, PWA installable</footer>
+<script src="js/storage.js"></script>
+<script src="js/main.js"></script>
+<script src="js/tasks.js"></script>
+</body></html>

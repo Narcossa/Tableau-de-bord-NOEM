@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>NOEM • Notes & To‑Do</title>
+<link rel="manifest" href="manifest.json"><link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <img src="assets/logo-noem.png" class="logo" alt="NOEM">
+  <strong>Notes & To‑Do</strong>
+  <div class="sp"></div>
+  <div id="profileBadge" class="badge">—</div>
+  <nav class="nav">
+    <a href="index.html" class="">Accueil</a>
+    <a href="tasks.html" class="">Tâches</a>
+    <a href="expenses.html" class="">Dépenses</a>
+    <a href="notes.html" class="active">Notes</a>
+    <a href="settings.html" class="">⚙️</a>
+  </nav>
+</header>
+<nav class="bottomnav"><a href="index.html">🏠</a><a href="tasks.html">🧱</a><a href="expenses.html">💶</a><a href="notes.html">🗒️</a><a href="settings.html">⚙️</a></nav>
+<div class="modal" id="profileModal"><div class="box"><header><img src="assets/logo-noem.png" style="height:28px"><strong>Choisissez votre profil</strong></header><div class="body"><button class="btn primary" onclick="NOEM.setProfile('Bastien')">👷 Bastien GOSSELIN</button><button class="btn" onclick="NOEM.setProfile('Mathis')">💻 Mathis GOSSELIN</button><span class="small">Le profil est mémorisé localement.</span></div></div></div>
+
+<main class="container">
+  <div class="card"><div class="card-h">Notes</div>
+    <div class="card-b grid">
+      <textarea id="notes" placeholder="Écrire une note..."></textarea>
+      <div class="row"><button class="btn primary" onclick="NOTES.save()">💾 Sauvegarder</button><button class="btn" onclick="NOTES.clear()">Effacer</button></div>
+      <span class="small">Stockées localement (IndexedDB).</span>
+    </div>
+  </div>
+
+  <div class="card"><div class="card-h">To‑Do List</div>
+    <div class="card-b grid">
+      <div class="row"><input id="tdText" placeholder="Nouvelle tâche rapide"><button class="btn primary" onclick="TODO.add()">+ Ajouter</button></div>
+      <div id="todoList" class="grid"></div>
+    </div>
+  </div>
+</main>
+<footer class="footer">NOEM • Dashboard — stockage IndexedDB, PWA installable</footer>
+<script src="js/storage.js"></script>
+<script src="js/main.js"></script>
+<script src="js/notes.js"></script>
+</body></html>
