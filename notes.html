@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>NOEM • Notes</title>
+<link rel="manifest" href="manifest.json"><link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="style.css">
+<link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.15/index.global.min.js"></script>
+</head>
+<body>
+
+<header class="topbar">
+  <img src="assets/logo-noem.png" class="logo" alt="NOEM">
+  <strong>Notes & Agenda</strong>
+  <div class="sp"></div>
+  <div id="profileBadge" class="badge">—</div>
+  <nav class="nav">
+    <a href="index.html" class="">Accueil</a>
+    <a href="tasks.html" class="">Tâches</a>
+    <a href="expenses.html" class="">Dépenses</a>
+    <a href="notes.html" class="active">Notes</a>
+    <a href="settings.html" class="">⚙️</a>
+  </nav>
+</header>
+<nav class="bottomnav">
+  <a href="index.html">🏠</a><a href="tasks.html">🧱</a><a href="expenses.html">💶</a><a href="notes.html">🗒️</a><a href="settings.html">⚙️</a>
+</nav>
+<div class="splash" id="splash"><img src="assets/logo-noem.png" alt="NOEM"></div>
+
+<main class="container">
+  <div class="card"><div class="card-h">Notes personnelles / pro</div>
+    <div class="card-b grid">
+      <textarea id="notes" placeholder="Écrire une note..."></textarea>
+      <div class="row"><button class="btn primary" onclick="NOTES.save()">💾 Sauvegarder</button><button class="btn" onclick='NOTES.clear()'>Effacer</button></div>
+      <span class="small">Stockées localement sur cet appareil.</span>
+    </div>
+  </div>
+
+  <div class="card"><div class="card-h">Mini agenda</div>
+    <div class="card-b"><div id="calendar"></div></div>
+  </div>
+</main>
+<footer class="footer">NOEM • Dashboard — données locales, PWA installable</footer>
+<script src="js/main.js"></script>
+<script src="js/notes.js"></script>
+</body></html>

@@ -1,0 +1,66 @@
+
+:root{
+  --bg:#0f1115; --panel:#151a21; --line:#262a34; --text:#e8ecf3; --muted:#9aa3b2;
+  --accent:#4f8cff; --ok:#22c55e; --warn:#f59e0b; --bad:#ef4444; --chip:#0f1521;
+  --radius:14px;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--text);font:14px/1.5 Inter,system-ui,Segoe UI,Roboto,Arial}
+a{color:#cfe1ff;text-decoration:none}
+.container{max-width:1200px;margin:0 auto;padding:18px}
+.topbar{position:sticky;top:0;z-index:60;display:flex;align-items:center;gap:12px;background:var(--panel);border-bottom:1px solid var(--line);padding:10px 14px}
+.logo{height:28px}
+.topbar .sp{flex:1}
+.nav{display:flex;gap:10px;flex-wrap:wrap}
+.nav a{padding:8px 10px;border:1px solid var(--line);border-radius:10px;background:#0f1521}
+.nav a.active{background:#223059;border-color:#3e5fb7}
+.badge{padding:6px 8px;border:1px solid var(--line);border-radius:10px;background:#111a2c;color:#cfe1ff;white-space:nowrap}
+.btn{background:#111724;border:1px solid var(--line);color:var(--text);padding:10px 12px;border-radius:10px;cursor:pointer;font-weight:600}
+.btn.primary{background:linear-gradient(180deg,#5a96ff,#4f8cff);border-color:#3973db;color:white}
+.card{border:1px solid var(--line);border-radius:var(--radius);background:#0f121a;overflow:hidden;margin-bottom:14px}
+.card-h{padding:12px;border-bottom:1px solid var(--line);text-transform:uppercase;color:#c8d4ff;font-size:12px;letter-spacing:.06em}
+.card-b{padding:12px}
+.grid{display:grid;gap:10px}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+input,select,textarea{background:#0f1521;border:1px solid var(--line);color:var(--text);padding:10px;border-radius:10px;outline:none}
+textarea{min-height:80px;resize:vertical}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.kpi{display:flex;flex-direction:column;gap:8px;padding:12px;border:1px solid var(--line);border-radius:12px;background:#0f121a}
+.kpi .val{font-size:22px;font-weight:800}
+table{width:100%;border-collapse:collapse}
+th,td{padding:10px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
+th{color:var(--muted);font-size:12px;text-transform:uppercase}
+tr:hover{background:#121827}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:4px 8px;font-size:12px}
+.pill{padding:4px 8px;border-radius:999px;font-size:12px}
+.pill.ok{background:#0b2a17;color:#8ef2b2;border:1px solid #1d5f32}
+.pill.warn{background:#33260c;color:#ffd58a;border:1px solid #7a5b19}
+.pill.bad{background:#331214;color:#ff9aa3;border:1px solid #6f1f27}
+.footer{padding:12px;color:var(--muted);text-align:center;border-top:1px solid var(--line);margin-top:20px}
+
+/* Splash */
+.splash{position:fixed;inset:0;background:#0f1115;display:flex;align-items:center;justify-content:center;z-index:100}
+.splash img{width:120px;opacity:.9;animation:pulse 1.2s infinite ease-in-out}
+@keyframes pulse{0%,100%{transform:scale(.95);opacity:.7}50%{transform:scale(1.05);opacity:1}}
+
+/* Bottom nav on mobile */
+.bottomnav{display:none}
+@media (max-width:900px){
+  .kpis{grid-template-columns:repeat(2,1fr)}
+  .bottomnav{position:fixed;bottom:0;left:0;right:0;background:var(--panel);border-top:1px solid var(--line);display:flex;justify-content:space-around;padding:8px 6px;z-index:80}
+  .container{padding-bottom:70px}
+  /* Responsive tables to cards */
+  table, thead, tbody, th, td, tr { display:block }
+  th { display:none }
+  td{padding:8px 12px;border:none;border-bottom:1px solid var(--line)}
+  td::before{content:attr(data-label);display:block;font-weight:600;color:var(--muted);margin-bottom:3px}
+}
+/* Kanban */
+.board{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.col{border:1px solid var(--line);border-radius:12px;background:#0f121a;min-height:120px}
+.col-h{padding:10px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between}
+.col-b{padding:10px;display:grid;gap:8px}
+.task{border:1px solid var(--line);border-radius:10px;background:#0f1521;padding:10px}
+@media (max-width:900px){ .board{grid-template-columns:1fr} }
