@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NOEM • Paramètres</title>
+<link rel="stylesheet" href="style.css">
+</head><body>
+
+<header class="topbar">
+  <img src="assets/logo-noem.png" class="logo" alt="NOEM">
+  <strong>NOEM • Dashboard</strong>
+  <div class="sp"></div>
+  <div id="userBadge" class="badge">—</div>
+  <nav class="nav">
+    <a href="index.html" class="">Accueil</a>
+    <a href="calendar.html" class="">Calendrier</a>
+    <a href="tasks.html" class="">Tâches</a>
+    <a href="expenses.html" class="">Dépenses</a>
+    <a href="notes.html" class="">Notes</a>
+    <a href="settings.html" class="active">⚙️</a>
+  </nav>
+</header>
+<nav class="bottomnav">
+  <a href="index.html">🏠</a>
+  <a href="calendar.html">🗓️</a>
+  <a href="tasks.html">🧱</a>
+  <a href="expenses.html">💶</a>
+  <a href="notes.html">🗒️</a>
+  <a href="settings.html">⚙️</a>
+</nav>
+
+<main class="container">
+  <div class="card"><div class="card-h">Profil</div><div class="card-b grid">
+    <div id="profile"></div>
+    <div class="row"><button id="logout" class="btn">Se déconnecter</button></div>
+  </div></div>
+  <div class="card"><div class="card-h">Raccourcis</div><div class="card-b row">
+    <button class="btn" id="openSheet">🧾 Compte Rendu HEBDO</button>
+  </div></div>
+</main>
+<footer class="footer">NOEM • V4 (Supabase)</footer>
+<script type="module" src="js/main.js"></script>
+</body></html>
