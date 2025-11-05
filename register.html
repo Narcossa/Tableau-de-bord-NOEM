@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NOEM • Inscription</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <img src="assets/logo-noem.png" class="logo" alt="NOEM">
+  <strong>NOEM • Inscription</strong>
+</header>
+<main class="container center">
+  <div class="card auth">
+    <div class="card-h">Créer un compte</div>
+    <div class="card-b grid">
+      <input id="name" placeholder="Nom (ex. Bastien GOSSELIN)">
+      <input id="email" type="email" placeholder="Email">
+      <input id="password" type="password" placeholder="Mot de passe">
+      <select id="role">
+        <option value="gerant">👷 Bastien (gérant)</option>
+        <option value="collaborateur">💻 Mathis (collaborateur)</option>
+      </select>
+      <button id="regBtn" class="btn primary">Créer mon compte</button>
+      <div class="small"><a href="login.html">Déjà inscrit ? Se connecter</a></div>
+    </div>
+  </div>
+</main>
+<footer class="footer">NOEM • V4 (Supabase)</footer>
+<script type="module" src="js/auth.js"></script>
+</body>
+</html>
